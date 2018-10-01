@@ -259,9 +259,26 @@ describe('rrulestr', function () {
       'RRULE:FREQ=YEARLY;COUNT=3;BYDAY=1TU,-1TH\n'
     ),
     [
-      datetimeUTC(1997, 12, 25, 9, 0),
-      datetimeUTC(1998, 1, 6, 9, 0),
-      datetimeUTC(1998, 12, 31, 9, 0)
+      datetimeUTC(1997, 12, 25, 10, 0),
+      datetimeUTC(1998, 1, 6, 10, 0),
+      datetimeUTC(1998, 12, 31, 10, 0)
+    ]
+  )
+
+  testRecurring('testStrDaily',
+    rrulestr(
+      'DTSTART:20181026T080000Z\n' +
+      'RRULE:FREQ=DAILY;COUNT=8\n'
+    ),
+    [
+      datetimeUTC(2018, 10, 26, 8, 0),
+      datetimeUTC(2018, 10, 27, 8, 0),
+      datetimeUTC(2018, 10, 28, 9, 0),
+      datetimeUTC(2018, 10, 29, 9, 0),
+      datetimeUTC(2018, 10, 30, 9, 0),
+      datetimeUTC(2018, 10, 31, 9, 0),
+      datetimeUTC(2018, 11, 1, 9, 0),
+      datetimeUTC(2018, 11, 2, 9, 0)
     ]
   )
 })
